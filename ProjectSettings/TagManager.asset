@@ -8,6 +8,7 @@ TagManager:
   - Nut
   - Hope
   - Water
+  - Snake
   layers:
   - Default
   - TransparentFX
@@ -20,7 +21,7 @@ TagManager:
   - Squirrel
   - Floor
   - Floor Back
-  - 
+  - Snake
   - 
   - 
   - 
@@ -59,4 +60,7 @@ TagManager:
     locked: 0
   - name: Floor
     uniqueID: 75979711
+    locked: 0
+  - name: Canvas
+    uniqueID: 3345665199
     locked: 0
