@@ -1,0 +1,62 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!78 &1
+TagManager:
+  serializedVersion: 2
+  tags:
+  - Floor
+  - Nut
+  - Hope
+  - Water
+  layers:
+  - Default
+  - TransparentFX
+  - Ignore Raycast
+  - 
+  - Water
+  - UI
+  - 
+  - 
+  - Squirrel
+  - Floor
+  - Floor Back
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  m_SortingLayers:
+  - name: Default
+    uniqueID: 0
+    locked: 0
+  - name: Floor Back
+    uniqueID: 3586174439
+    locked: 0
+  - name: Environment Back
+    uniqueID: 1228598101
+    locked: 0
+  - name: Squirrel
+    uniqueID: 427401101
+    locked: 0
+  - name: Environment Front
+    uniqueID: 1904963059
+    locked: 0
+  - name: Floor
+    uniqueID: 75979711
+    locked: 0
