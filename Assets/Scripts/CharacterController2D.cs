@@ -68,6 +68,11 @@ public class CharacterController2D : MonoBehaviour
 
 	public void Move(float move, bool jump)
 	{
+        /*if (!GetComponent<PlayerMovement>().canMove)
+        {
+			return;
+        }*/
+
 		anim.SetBool("grounded", m_Grounded);
 
 		//only control the player if grounded or airControl is turned on
@@ -123,7 +128,7 @@ public class CharacterController2D : MonoBehaviour
 		if (!m_Grounded && jumpCount == 0 && Input.GetButton("Jump") && fly && allowFly)
 		{
 			m_Rigidbody2D.gravityScale = 2;
-			m_Rigidbody2D.AddForce(Vector2.right * 800 * transform.localScale.x * -1);
+			m_Rigidbody2D.AddForce(Vector2.right * 1000 * transform.localScale.x * -1);
 			Time.timeScale = 0.8f;
 		}
 		else

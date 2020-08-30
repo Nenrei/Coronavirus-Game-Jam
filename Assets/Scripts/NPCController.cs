@@ -1,6 +1,5 @@
 ﻿using Cinemachine;
 using System.Collections;
-using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
@@ -24,7 +23,9 @@ public class NPCController : MonoBehaviour
 
     private Animator anim;
 
-    private TextMeshProUGUI uiMessage;
+
+    [SerializeField] private GameObject uiMessagePanel;
+    [SerializeField] private TextMeshProUGUI uiMessage;
 
 
 
@@ -37,7 +38,6 @@ public class NPCController : MonoBehaviour
         player = GameObject.Find("Squirrel");
 
         anim = GetComponent<Animator>();
-        uiMessage = GameObject.Find("UIMessage").GetComponent<TextMeshProUGUI>();
 
     }
 
@@ -128,11 +128,11 @@ public class NPCController : MonoBehaviour
         player.GetComponent<PlayerMovement>().canMove = true;
 
         yield return new WaitForSeconds(0.5f);
-        uiMessage.GetComponent<CanvasGroup>().alpha = 1;
+        uiMessagePanel.GetComponent<CanvasGroup>().alpha = 1;
         uiMessage.text = message;
 
         yield return new WaitForSeconds(2.5f);
-        uiMessage.GetComponent<CanvasGroup>().alpha = 0;
+        uiMessagePanel.GetComponent<CanvasGroup>().alpha = 0;
 
         gameObject.SetActive(false);
         
@@ -156,11 +156,11 @@ public class NPCController : MonoBehaviour
         player.GetComponent<PlayerMovement>().canMove = true;
 
         yield return new WaitForSeconds(0.5f);
-        uiMessage.GetComponent<CanvasGroup>().alpha = 1;
+        uiMessagePanel.GetComponent<CanvasGroup>().alpha = 1;
         uiMessage.text = message;
 
         yield return new WaitForSeconds(3.5f);
-        uiMessage.GetComponent<CanvasGroup>().alpha = 0;
+        uiMessagePanel.GetComponent<CanvasGroup>().alpha = 0;
 
 
         gameObject.SetActive(false);
@@ -168,11 +168,11 @@ public class NPCController : MonoBehaviour
 
     private IEnumerator ShowHideMessage(string message)
     {
-        uiMessage.GetComponent<CanvasGroup>().alpha = 1;
+        uiMessagePanel.GetComponent<CanvasGroup>().alpha = 1;
         uiMessage.text = message;
 
         yield return new WaitForSeconds(2.5f);
-        uiMessage.GetComponent<CanvasGroup>().alpha = 0;
+        uiMessagePanel.GetComponent<CanvasGroup>().alpha = 0;
     }
 
 

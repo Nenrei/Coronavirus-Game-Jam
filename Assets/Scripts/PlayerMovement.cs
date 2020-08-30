@@ -38,9 +38,13 @@ public class PlayerMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
-        anim.SetBool("running", horizontalMove != 0);    
-        controller.Move(horizontalMove * Time.fixedDeltaTime, jump);
-        jump = false;
+        if (canMove)
+        {
+            anim.SetBool("running", horizontalMove != 0);
+            controller.Move(horizontalMove * Time.fixedDeltaTime, jump);
+            jump = false;
+
+        }
     }
 
 
@@ -60,6 +64,9 @@ public class PlayerMovement : MonoBehaviour
         {
             health.Damage(GetComponent<PlayerHealth>().health);
 
+        }else if (collision.gameObject.name == "EndGameController")
+        {
+            StartCoroutine(collision.gameObject.GetComponent<EndGameController>().EndGame());
         }
     }
 
