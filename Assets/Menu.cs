@@ -6,12 +6,12 @@ using UnityEngine;
 public class Menu : MonoBehaviour
 {
 
-    [SerializeField] private GameObject optionArrow;
-    [SerializeField] private GameObject[] options;
+    private GameObject optionArrow;
+    private GameObject[] options = { null, null };
     [SerializeField] private Color normalColor;
     [SerializeField] private Color selectedColor;
-    [SerializeField] private float[] optionsYPosition = { 0, 0, 0};
-    [SerializeField] private GameObject howToPanel;
+    private float[] optionsYPosition = { 0, 0};
+    private GameObject howToPanel;
 
     private int selectedOption = 0;
 
@@ -25,12 +25,20 @@ public class Menu : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        options[0] = GameObject.Find("WakeUp");
+        options[1] = GameObject.Find("Exit");
+
+        optionArrow = GameObject.Find("Option");
+        howToPanel = GameObject.Find("HowTo");
+        howToPanel.SetActive(false);
+
         for (int i = 0; i < options.Length; i++)
         {
             optionsYPosition[i] = options[i].GetComponent<RectTransform>().position.y;
         }
         options[selectedOption].GetComponent<Animator>().SetBool("selected", true);
         options[selectedOption].GetComponent<TextMeshProUGUI>().color = selectedColor;
+
     }
 
     // Update is called once per frame
