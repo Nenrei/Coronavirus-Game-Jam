@@ -5,6 +5,33 @@ TextureImporter:
   - first:
       213: -1911115791178550814
     second: squirrel-0_0
+  - first:
+      213: -697850353718885685
+    second: squirrel-0_1
+  - first:
+      213: -8047282324596067066
+    second: squirrel-0_0
+  - first:
+      213: 8713102268995545418
+    second: squirrel-0_1
+  - first:
+      213: 9204506466001379217
+    second: squirrel-0_2
+  - first:
+      213: 6891103808122678192
+    second: squirrel-0_3
+  - first:
+      213: -6239071863828032107
+    second: squirrel-0_4
+  - first:
+      213: -4634713399474490479
+    second: squirrel-0_5
+  - first:
+      213: 4707110520290936087
+    second: squirrel-0_6
+  - first:
+      213: 7096458794020750519
+    second: squirrel-0_7
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -131,8 +158,92 @@ TextureImporter:
       name: squirrel-0_0
       rect:
         serializedVersion: 2
-        x: 22
-        y: 16
+        x: 3
+        y: 45
+        width: 15
+        height: 17
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 605fb23bc5f425090800000000000000
+      internalID: -8047282324596067066
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: squirrel-0_1
+      rect:
+        serializedVersion: 2
+        x: 19
+        y: 45
+        width: 15
+        height: 17
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a49212389582be870800000000000000
+      internalID: 8713102268995545418
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: squirrel-0_2
+      rect:
+        serializedVersion: 2
+        x: 35
+        y: 45
+        width: 15
+        height: 16
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 19f5ccefcd9fcbf70800000000000000
+      internalID: 9204506466001379217
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: squirrel-0_3
+      rect:
+        serializedVersion: 2
+        x: 51
+        y: 45
+        width: 16
+        height: 13
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0bb6e71276e12af50800000000000000
+      internalID: 6891103808122678192
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: squirrel-0_4
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 4
         width: 45
         height: 36
       alignment: 7
@@ -142,8 +253,71 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2e1b92e305a5a75e0800000000000000
-      internalID: -1911115791178550814
+      spriteID: 5955564223d5a69a0800000000000000
+      internalID: -6239071863828032107
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: squirrel-0_5
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 4
+        width: 45
+        height: 36
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 193749c08b03eafb0800000000000000
+      internalID: -4634713399474490479
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: squirrel-0_6
+      rect:
+        serializedVersion: 2
+        x: 94
+        y: 4
+        width: 43
+        height: 34
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 71502703414035140800000000000000
+      internalID: 4707110520290936087
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: squirrel-0_7
+      rect:
+        serializedVersion: 2
+        x: 140
+        y: 4
+        width: 41
+        height: 31
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7b4cdccacafab7260800000000000000
+      internalID: 7096458794020750519
       vertices: []
       indices: 
       edges: []

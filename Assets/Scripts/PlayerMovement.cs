@@ -15,6 +15,8 @@ public class PlayerMovement : MonoBehaviour
     PlayerHealth health;
     PlayerHope hope;
 
+    public bool canMove = true;
+
     private void Start()
     {
         health = GetComponent<PlayerHealth>();
@@ -24,10 +26,13 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        horizontalMove = Input.GetAxisRaw("Horizontal") * runSpeed;
-        if (Input.GetButtonDown("Jump"))
+        if (canMove)
         {
-            jump = true;
+            horizontalMove = Input.GetAxisRaw("Horizontal") * runSpeed;
+            if (Input.GetButtonDown("Jump"))
+            {
+                jump = true;
+            }
         }
     }
 
@@ -53,9 +58,10 @@ public class PlayerMovement : MonoBehaviour
 
         }else if (collision.gameObject.CompareTag("Water"))
         {
-            health.Damage(health.health);
+            health.Damage(GetComponent<PlayerHealth>().health);
 
         }
     }
+
 
 }

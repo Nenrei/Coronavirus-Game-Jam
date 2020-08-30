@@ -6,7 +6,7 @@ AnimationClip:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Squirell_Iddle
+  m_Name: Squirell_Iddle_Life_2
   serializedVersion: 6
   m_Legacy: 0
   m_Compressed: 0
@@ -20,7 +20,7 @@ AnimationClip:
   m_PPtrCurves:
   - curve:
     - time: 0
-      value: {fileID: -1911115791178550814, guid: 078880031e611ed44b6d478f7f7c81ef, type: 3}
+      value: {fileID: 4707110520290936087, guid: 078880031e611ed44b6d478f7f7c81ef, type: 3}
     attribute: m_Sprite
     path: 
     classID: 212
@@ -40,7 +40,7 @@ AnimationClip:
       customType: 23
       isPPtrCurve: 1
     pptrCurveMapping:
-    - {fileID: -1911115791178550814, guid: 078880031e611ed44b6d478f7f7c81ef, type: 3}
+    - {fileID: 4707110520290936087, guid: 078880031e611ed44b6d478f7f7c81ef, type: 3}
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}

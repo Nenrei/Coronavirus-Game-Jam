@@ -8,7 +8,10 @@ public class PlayerHope : MonoBehaviour
     public float hope = 0f;
 
     public TextMeshProUGUI hopeCount;
-
+    private void Awake()
+    {
+        AddHope(0);
+    }
 
     public void AddHope(float toAdd)
     {

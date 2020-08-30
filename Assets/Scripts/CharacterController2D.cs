@@ -9,11 +9,18 @@ public class CharacterController2D : MonoBehaviour
 	[SerializeField] private LayerMask m_WhatIsGround;							// A mask determining what is ground to the character
 	[SerializeField] private Transform m_GroundCheck;							// A position marking where to check if the player is grounded.
 
-	const float k_GroundedRadius = .2f; // Radius of the overlap circle to determine if grounded
+	const float k_GroundedRadius = 0.5f; // Radius of the overlap circle to determine if grounded
 	[SerializeField] private bool m_Grounded;            // Whether or not the player is grounded.
 	private Rigidbody2D m_Rigidbody2D;
 	private bool m_FacingRight = true;  // For determining which way the player is currently facing.
 	private Vector3 m_Velocity = Vector3.zero;
+
+	private Animator anim;
+
+	private int jumpCount = 2;
+	public bool doubleJump;
+	public bool fly;
+	public bool allowFly;
 
 	[Header("Events")]
 	[Space]
@@ -27,6 +34,7 @@ public class CharacterController2D : MonoBehaviour
 	private void Awake()
 	{
 		m_Rigidbody2D = GetComponent<Rigidbody2D>();
+		anim = GetComponentInChildren<Animator>();
 
 		if (OnLandEvent == null)
 			OnLandEvent = new UnityEvent();
@@ -40,11 +48,17 @@ public class CharacterController2D : MonoBehaviour
 		// The player is grounded if a circlecast to the groundcheck position hits anything designated as ground
 		// This can be done using layers instead but Sample Assets will not overwrite your project settings.
 		Collider2D[] colliders = Physics2D.OverlapCircleAll(m_GroundCheck.position, k_GroundedRadius, m_WhatIsGround);
+
+		Collider2D[] colliders2 = Physics2D.OverlapCircleAll(m_GroundCheck.position, k_GroundedRadius, m_WhatIsGround);
+
 		for (int i = 0; i < colliders.Length; i++)
 		{
 			if (colliders[i].gameObject != gameObject)
 			{
+				jumpCount = 1;
 				m_Grounded = true;
+
+				allowFly = false;
 				if (!wasGrounded)
 					OnLandEvent.Invoke();
 			}
@@ -54,7 +68,8 @@ public class CharacterController2D : MonoBehaviour
 
 	public void Move(float move, bool jump)
 	{
-		
+		anim.SetBool("grounded", m_Grounded);
+
 		//only control the player if grounded or airControl is turned on
 		if (m_Grounded || m_AirControl)
 		{
@@ -80,11 +95,50 @@ public class CharacterController2D : MonoBehaviour
 		// If the player should jump...
 		if (m_Grounded && jump)
 		{
-			// Add a vertical force to the player.
 			m_Grounded = false;
 			m_Rigidbody2D.AddForce(new Vector2(0f, m_JumpForce));
+			anim.SetTrigger("jumping");
+
 		}
+		else if(jump && doubleJump && jumpCount > 0)
+        {
+			jumpCount--;
+			m_Grounded = false;
+			m_Rigidbody2D.velocity = new Vector2(m_Rigidbody2D.velocity.x, 0);
+			m_Rigidbody2D.AddForce(new Vector2(0f, m_JumpForce));
+			anim.SetTrigger("jumping");
+		}
+
+        /*if(Input.GetButtonUp("Jump") && jumpCount == 0)
+        {
+			allowFly = true;
+		}*/
+
+        if (jumpCount == 0 && fly && !allowFly)
+        {
+			Invoke("AllowFly", 0.5f);
+		}
+
+
+		if (!m_Grounded && jumpCount == 0 && Input.GetButton("Jump") && fly && allowFly)
+		{
+			m_Rigidbody2D.gravityScale = 2;
+			m_Rigidbody2D.AddForce(Vector2.right * 800 * transform.localScale.x * -1);
+			Time.timeScale = 0.8f;
+		}
+		else
+		{
+			m_Rigidbody2D.gravityScale = 6;
+			Time.timeScale = 1;
+		}
+
 	}
+
+	private void AllowFly()
+    {
+		allowFly = true;
+    }
+
 
 
 	private void Flip()

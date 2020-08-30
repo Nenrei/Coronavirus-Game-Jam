@@ -8,9 +8,10 @@ public class SnakeController : MonoBehaviour
     private Transform target;
 
     [SerializeField] private Animator anim;
+    [SerializeField] private Transform rayCastPoint;
 
-    bool raycastToAttack;
-    bool raycastToDamage;
+    [SerializeField] private bool raycastToAttack;
+    [SerializeField] private bool raycastToDamage;
 
     // Start is called before the first frame update
     void Start()
@@ -23,19 +24,16 @@ public class SnakeController : MonoBehaviour
     void Update()
     {
 
-        Vector3 pos = new Vector3(target.position.x, target.position.y, target.position.z);
-        Vector3 pos2 = new Vector3(transform.position.x, transform.position.y, transform.position.z);
-
         if (raycastToAttack) { 
             RaycastHit2D hit = Physics2D.Raycast(
-                        pos2,
-                        pos - pos2,
+                        rayCastPoint.position,
+                        target.position - rayCastPoint.position,
                         8f,
                         1 << LayerMask.NameToLayer("Squirrel")
                     );
 
-            Vector3 forward = transform.TransformDirection(pos - pos2);
-            Debug.DrawRay(pos2, forward, Color.red);
+            Vector3 forward = rayCastPoint.TransformDirection(target.position - rayCastPoint.position);
+            //Debug.DrawRay(pos2, forward, Color.red);
 
             if (hit.collider != null)
             {
@@ -53,14 +51,14 @@ public class SnakeController : MonoBehaviour
 
         if (raycastToDamage) {
             RaycastHit2D hit = Physics2D.Raycast(
-                    pos2,
-                    pos - pos2,
+                    rayCastPoint.position,
+                    target.position - rayCastPoint.position,
                     1f,
                     1 << LayerMask.NameToLayer("Squirrel")
                 );
 
-            Vector3 forward = transform.TransformDirection(pos - pos2);
-            Debug.DrawRay(pos2, forward, Color.green);
+            Vector3 forward = transform.TransformDirection(target.position - rayCastPoint.position);
+            Debug.DrawRay(rayCastPoint.position, forward, Color.green);
 
             if (hit.collider != null)
             {
@@ -87,10 +85,5 @@ public class SnakeController : MonoBehaviour
         raycastToDamage = false;
     }
 
-    private void Hurt()
-    {
-        raycastToAttack = true;
-        GameObject.Find("Squirrel").GetComponent<PlayerHealth>().Damage(3);
-    }
 
 }
