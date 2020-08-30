@@ -11,6 +11,15 @@ TextureImporter:
   - first:
       213: -959298158935449069
     second: snake-1_2
+  - first:
+      213: 3083161422171080658
+    second: snake-1_0
+  - first:
+      213: 7680417970494242927
+    second: snake-1_1
+  - first:
+      213: 6686669302872362731
+    second: snake-1_2
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -138,7 +147,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 93
-        y: 46
+        y: 8
         width: 163
         height: 38
       alignment: 8
@@ -148,8 +157,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a2227b7446d0037c0800000000000000
-      internalID: -4093757336928706006
+      spriteID: 2d702b96af699ca20800000000000000
+      internalID: 3083161422171080658
       vertices: []
       indices: 
       edges: []
@@ -159,7 +168,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 349
-        y: 46
+        y: 8
         width: 163
         height: 38
       alignment: 8
@@ -169,8 +178,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d38020afbfe7413f0800000000000000
-      internalID: -930979602262521795
+      spriteID: f6006d99373569a60800000000000000
+      internalID: 7680417970494242927
       vertices: []
       indices: 
       edges: []
@@ -180,7 +189,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 603
-        y: 44
+        y: 6
         width: 165
         height: 58
       alignment: 8
@@ -190,8 +199,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 31267f23863efa2f0800000000000000
-      internalID: -959298158935449069
+      spriteID: bee4730bd42dbcc50800000000000000
+      internalID: 6686669302872362731
       vertices: []
       indices: 
       edges: []

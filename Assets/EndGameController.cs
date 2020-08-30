@@ -7,6 +7,8 @@ using UnityEngine.SceneManagement;
 
 public class EndGameController : MonoBehaviour
 {
+
+    [SerializeField] AudioSource playerAudio;
     [SerializeField] PlayerMovement player;
     [SerializeField] Animator playerAnim;
     [SerializeField] Rigidbody2D rb;
@@ -43,7 +45,26 @@ public class EndGameController : MonoBehaviour
         }
     }
 
-    private IEnumerator HopeCount()
+    private IEnumerator LerpAudio()
+    {
+
+        yield return new WaitForSeconds(3f);
+
+        GetComponent<AudioSource>().Play();
+        GetComponent<AudioSource>().volume = 0;
+
+        while (GetComponent<AudioSource>().volume < 1)
+        {
+            playerAudio.volume -= 0.05f;
+            GetComponent<AudioSource>().volume += 0.05f;
+            yield return new WaitForSeconds(.05f);
+        }
+
+        playerAudio.Stop();
+
+    }
+
+        private IEnumerator HopeCount()
     {
         yield return new WaitForSeconds(3f);
         hope = int.Parse(hopeCount.text);
@@ -86,6 +107,8 @@ public class EndGameController : MonoBehaviour
     public IEnumerator EndGame()
     {
         StartCoroutine(HopeCount());
+        StartCoroutine(LerpAudio());
+
         hope = int.Parse(hopeCount.text);
         cam.Follow = playerAnim.gameObject.transform;
         particles.gameObject.SetActive(true);
@@ -141,7 +164,7 @@ public class EndGameController : MonoBehaviour
 
 
         yield return new WaitForSeconds(2f);
-        uiMessage.text = "Do you?";
+        uiMessage.text = "Did you?";
 
         yield return new WaitForSeconds(1f);
         endCinematic.SetActive(true);
