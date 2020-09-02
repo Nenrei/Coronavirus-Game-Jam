@@ -1409,7 +1409,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: A Squirrel's Apocalipse
+  m_text: A Squirrel's Apocalypse
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 4df8bd750bf170d469d5f1320e36474f, type: 2}
   m_sharedMaterial: {fileID: 6781581628928851820, guid: 4df8bd750bf170d469d5f1320e36474f, type: 2}
